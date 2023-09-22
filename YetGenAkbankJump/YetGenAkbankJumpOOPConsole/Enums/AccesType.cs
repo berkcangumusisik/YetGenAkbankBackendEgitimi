@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YetGenAkbankJumpOOPConsole.Common;
 
-namespace YetGenAkbankJumpOOPConsole.Entities
+namespace YetGenAkbankJumpOOPConsole.Enums
 {
-    internal class Person : EntityBase<int>
+    public enum AccesType
     {
+        FingerPrint = 0,
+        Face = 1,
+        Card = 2,
     }
 }
