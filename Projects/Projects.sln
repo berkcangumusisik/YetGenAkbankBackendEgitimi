@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyClone", "SpotifyClone\SpotifyClone.csproj", "{69D285E7-1F5D-47F9-BAB4-A295C0F91264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingApp", "MeetingApp\MeetingApp.csproj", "{E37C111E-657B-4509-96D1-F4C54EF63256}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69D285E7-1F5D-47F9-BAB4-A295C0F91264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D285E7-1F5D-47F9-BAB4-A295C0F91264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D285E7-1F5D-47F9-BAB4-A295C0F91264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D285E7-1F5D-47F9-BAB4-A295C0F91264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E37C111E-657B-4509-96D1-F4C54EF63256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37C111E-657B-4509-96D1-F4C54EF63256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37C111E-657B-4509-96D1-F4C54EF63256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37C111E-657B-4509-96D1-F4C54EF63256}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80AF731A-4015-4D4F-86C4-58DA1109E11D}
+	EndGlobalSection
+EndGlobal
