@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using YetGenAkbankJumpOOPConsole.Entities;
 using YetGenAkbankJumpOOPConsole.Enums;
+using YetGenAkbankJumpOOPConsole.Services;
 
 var student = new Student()
 {
@@ -50,33 +51,54 @@ teacher.SayMyName();
  * Polymorphism : Bir nesnenin birden fazla formu olabilir. Örneğin; Person classı içerisindeki FirstName ve LastName alanları Student ve Teacher classlarında da var. Bu alanlar Person classının bir formudur.
  */
 
-var filePath = "C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\AccessControlLogs.txt";
-var textFile = File.ReadAllText(filePath);
+const string logFilePath = "C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\AccessControlLogs.txt";
+var consoleLogger = new ConsoleLogger();
+var fileLogger = FileLogger(logFilePath);
 
-var splittedLines = textFile.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
-
-List<AccesControlLog> logs = new ();
-foreach (var splittedLine in splittedLines)
+try
 {
-    var values = splittedLine.Split("---", StringSplitOptions.RemoveEmptyEntries);
+    var filePath = "C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\AccessControlLogs.txt";
+    var textFile = File.ReadAllText(filePath);
 
-    var accesControlLog = new AccesControlLog()
+    consoleLogger.Log("Dosya yüklendi.");
+
+    var splittedLines = textFile.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
+
+    consoleLogger.Log("Dosya satırlara ayrıldı.");
+
+    List<AccesControlLog> logs = new();
+    foreach (var splittedLine in splittedLines)
     {
-        Id = Guid.NewGuid(),
-        CreateOn = DateTimeOffset.Now,
-        PersonId = Convert.ToInt64(values[0]),
-        DeviceSerialNo = values[1],
-        AccesType = AccesControlLog.ConvertStringToAccesType(values[2]),
-        LogTime = Convert.ToDateTime(values[3]),
-    };
+        var values = splittedLine.Split("---", StringSplitOptions.RemoveEmptyEntries);
 
-    logs.Add(accesControlLog);
+        var accesControlLog = new AccesControlLog()
+        {
+            Id = Guid.NewGuid(),
+            CreateOn = DateTimeOffset.Now,
+            PersonId = Convert.ToInt64(values[0]),
+            DeviceSerialNo = values[1],
+            AccesType = AccesControlLog.ConvertStringToAccesType(values[2]),
+            LogTime = Convert.ToDateTime(values[3]),
+        };
+
+        logs.Add(accesControlLog);
+    }
+
+    consoleLogger.Log("Loglar oluşturuldu.");
+
+    fileLogger.Log("Dosya yüklendi.");
+
+    consoleLogger.Log("Loglar json dosyasına yazıldı.");
+    fileLogger.Log("Loglar json dosyasına yazıldı.");
+
+    consoleLogger.Log("İşlem tamamlandı.");
+    fileLogger.Log("İşlem tamamlandı.");
+    Console.ReadLine();
 }
-
-File.WriteAllText("C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\logs.json", JsonSerializer.Serialize(logs));
-
-Console.WriteLine("İşlem tamamlandı.");
-Console.ReadLine();
+catch (Exception ex)
+{
+    consoleLogger.Log(ex.Message);
+}
 
 /**
  * File.ReadAllText() : Bir dosyanın içeriğini okumak için kullanılır.
