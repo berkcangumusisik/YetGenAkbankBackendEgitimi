@@ -1,7 +1,11 @@
-﻿using System.Text.Json;
+﻿using Microsoft.Extensions.Logging;
+using System.Security;
+using System.Text.Json;
+using YetGenAkbankJumpOOPConsole.Common;
 using YetGenAkbankJumpOOPConsole.Entities;
 using YetGenAkbankJumpOOPConsole.Enums;
 using YetGenAkbankJumpOOPConsole.Services;
+using YetGenAkbankJumpOOPConsole.Utilities;
 
 var student = new Student()
 {
@@ -51,20 +55,22 @@ teacher.SayMyName();
  * Polymorphism : Bir nesnenin birden fazla formu olabilir. Örneğin; Person classı içerisindeki FirstName ve LastName alanları Student ve Teacher classlarında da var. Bu alanlar Person classının bir formudur.
  */
 
+ILogger logger = new Logger<string>(new LoggerFactory());
 const string logFilePath = "C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\AccessControlLogs.txt";
-var consoleLogger = new ConsoleLogger();
-var fileLogger = FileLogger(logFilePath);
+var consoleLogger = new ConsoleLogger("");
+var fileLogger = new FileLogger(logFilePath);
+
 
 try
 {
     var filePath = "C:\\Users\\Berk\\Documents\\GitHub\\YetGenAkbankBackendEgitimi\\YetGenAkbankJump\\AccessControlLogs.txt";
     var textFile = File.ReadAllText(filePath);
 
-    consoleLogger.Log("Dosya yüklendi.");
+    consoleLogger.LogInfo("Dosya yüklendi.");
 
     var splittedLines = textFile.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
 
-    consoleLogger.Log("Dosya satırlara ayrıldı.");
+    consoleLogger.LogInfo("Dosya satırlara ayrıldı.");
 
     List<AccesControlLog> logs = new();
     foreach (var splittedLine in splittedLines)
@@ -84,15 +90,17 @@ try
         logs.Add(accesControlLog);
     }
 
-    consoleLogger.Log("Loglar oluşturuldu.");
+    consoleLogger.LogSuccess("Loglar oluşturuldu.");
 
     fileLogger.Log("Dosya yüklendi.");
 
-    consoleLogger.Log("Loglar json dosyasına yazıldı.");
-    fileLogger.Log("Loglar json dosyasına yazıldı.");
+    consoleLogger.LogSuccess("Loglar json dosyasına yazıldı.");
+    fileLogger.LogSuccess("Loglar json dosyasına yazıldı.");
 
-    consoleLogger.Log("İşlem tamamlandı.");
-    fileLogger.Log("İşlem tamamlandı.");
+    consoleLogger.LogSuccess("İşlem tamamlandı.");
+    fileLogger.LogSuccess("İşlem tamamlandı.");
+
+    
     Console.ReadLine();
 }
 catch (Exception ex)
@@ -104,4 +112,31 @@ catch (Exception ex)
  * File.ReadAllText() : Bir dosyanın içeriğini okumak için kullanılır.
  * .Split() : Bu metot bir string'i parçalamak için kullanılır. İçerisine verdiğimiz parametreye göre parçalar.
  * StringSplitOptions.RemoveEmptyEntries : Bu parametre ile boşlukları kaldırır.
+ */
+
+
+List<object> myObjects = new List<object>();
+myObjects.Add(consoleLogger);
+myObjects.Add(fileLogger);
+foreach (var myObject in myObjects)
+{
+    if (myObject is LoggerBase)
+    {
+        var baseLogger = myObject as LoggerBase;
+        baseLogger.LogInfo("Ben bir base loggerım");
+    }
+
+
+    
+}
+
+decimal finalAmount = 0;
+int amount = 68;
+
+finalAmount = amount;
+
+
+/**
+ * Implicit : Veri kaybı olmaz.
+ * Explicit : Veri kaybı olabilir.
  */

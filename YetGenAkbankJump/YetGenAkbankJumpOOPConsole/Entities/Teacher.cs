@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YetGenAkbankJumpOOPConsole.Common;
 using YetGenAkbankJumpOOPConsole.Enums;
+using YetGenAkbankJumpOOPConsole.Utilities;
 
 namespace YetGenAkbankJumpOOPConsole.Entities
 {
@@ -14,6 +15,6 @@ namespace YetGenAkbankJumpOOPConsole.Entities
 
         
 
-        
+
     }
 }
