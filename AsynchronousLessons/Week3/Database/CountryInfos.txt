@@ -1,0 +1,4 @@
+﻿U.S.A., 1.8
+Türkiye, 1.1
+İspanya, 1.4
+Fransa, 1.4
