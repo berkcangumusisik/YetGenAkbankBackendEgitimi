@@ -1,0 +1,9 @@
+﻿@model PasswordsIndexViewModel
+
+<h1>@Model.Passwords</h1>
+
+
+<form asp-action="Index" asp-route="@Model">
+    <input asp-for="PasswordsLenght" />
+    <button asp-action="Index" asp-controller="Passwords">Üret</button>
+</form>

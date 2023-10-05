@@ -22,7 +22,7 @@ namespace PasswordGenerator
             _random = new Random();
         }
 
-        public string GeneratePassword(int passwordLength, bool includeNumbers, bool includeLowerCaseChars, bool includeUpperCase, bool includeSpecialChars)
+        public String GeneratePassword(int passwordLength, bool includeNumbers, bool includeLowerCaseChars, bool includeUpperCase, bool includeSpecialChars)
         {
 
             var charsBuilder = new StringBuilder();
