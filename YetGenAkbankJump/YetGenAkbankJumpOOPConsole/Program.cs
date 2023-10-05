@@ -5,7 +5,6 @@ using YetGenAkbankJumpOOPConsole.Common;
 using YetGenAkbankJumpOOPConsole.Entities;
 using YetGenAkbankJumpOOPConsole.Enums;
 using YetGenAkbankJumpOOPConsole.Services;
-using YetGenAkbankJumpOOPConsole.Utilities;
 
 var student = new Student()
 {
