@@ -27,7 +27,7 @@ bool DeleteNoteById(Guid id)
 void BulkUpdate()
 {
     var  newNotes = new List<Note>();
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 3; i++)
     {
         newNotes.Add(new Note($"Hello World {i}"));
     }
@@ -46,4 +46,13 @@ bool Updates(Guid id)
     note2.Text = "Hello World Updated!";
     _context.SaveChanges();
     return true;
+}
+
+DeleteNoteById(notes[0].Id);
+BulkUpdate();
+Updates(notes[1].Id);
+
+foreach (Note note in notes)
+{
+    Console.WriteLine($"Id: {note.Id} Text: {note.Text}");
 }
