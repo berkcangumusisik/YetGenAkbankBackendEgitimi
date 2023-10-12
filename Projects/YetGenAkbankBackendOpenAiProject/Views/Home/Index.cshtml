@@ -1,0 +1,42 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "DALL-E App";
+}
+
+<div class="container">
+    <h1>@Model.Prompt</h1>
+    <p>Image Count: @Model.ImageCount</p>
+
+    <form asp-controller="Home" asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="prompt">Prompt:</label>
+            <input type="text" class="form-control" id="prompt" name="Prompt" value="@Model.Prompt" />
+        </div>
+        <div class="form-group">
+            <label for="imageCount">Resim Sayısı :</label>
+            <input type="number" class="form-control" id="imageCount" name="ImageCount" value="@Model.ImageCount" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gönder</button>
+    </form>
+
+    @if (Model.ImageUrls is not null && Model.ImageUrls.Any())
+    {
+        <div class="row">
+            @foreach (var imageUrl in Model.ImageUrls)
+            {
+                <div class="col-md-3">
+                    <img src="@imageUrl" alt="Image" class="img-fluid" />
+                </div>
+            }
+        </div>
+    }
+
+    @if(!string.IsNullOrEmpty(Model.ChatGPTResponse))
+    {
+        <div class="row">
+            <textarea class="form-control" rows="3" cols="3", readonly="readonly" asp-for="ChatGPTResponse"></textarea>
+        </div>
+    }
+
+</div>
