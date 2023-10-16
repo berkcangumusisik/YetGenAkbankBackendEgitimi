@@ -13,8 +13,6 @@ namespace Week_5.Entities
         public decimal Weight { get; set; }
         public decimal Price { get; set; }
 
-        public Product() { }
-
         public Product(string title, decimal weight, decimal price)
         {
             Id = Guid.NewGuid();

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week 4", "Week 4\Week 4.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week 4.2", "Week 4.2\Week 4.2.csproj", "{CFB7B5E4-825F-46A9-8D19-95D5F8DAAF4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week 5", "Week 5\Week 5.csproj", "{61303D0C-1F29-4C77-BD84-280AC53E0EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week 5", "Week 5\Week 5.csproj", "{61303D0C-1F29-4C77-BD84-280AC53E0EF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

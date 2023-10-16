@@ -1,6 +1,6 @@
 ﻿using Week_1.Entities;
 using Week_1.Enums;
-using Week_1.ValueObject;
+using Week_1.ValueObjects;
 
 Student student1 = new Student(1, "Berkcan", "Gümüşışık");
 
@@ -16,8 +16,8 @@ RAM memory = new RAM("Corsair", new Capacity(16, CapacitySizeType.GB));
 Computer computer1 = new Computer("Apple", "Macbook Pro", "i7", memory , storage);
 
 
-Guest guest1 = new Guest("Yeliz", "Akın", "12323423432", "0530 111 2233");
-Reservation reservation = new Reservation(guest1, new DateTime(2021, 10, 1), new DateTime(2021, 10, 5));
+//Guest guest1 = new Guest("Yeliz", "Akın", "12323423432", "0530 111 2233");
+//Reservation reservation = new Reservation(guest1, new DateTime(2021, 10, 1), new DateTime(2021, 10, 5));
 
 /**
  * OOP yaklaşımı dilden bağımsızdır. Java ve C# gibi dillerde de kullanılabilir.

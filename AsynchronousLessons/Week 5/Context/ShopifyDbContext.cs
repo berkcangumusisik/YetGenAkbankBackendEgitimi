@@ -10,11 +10,11 @@ namespace Week_5.Context
 {
     public class ShopifyDbContext : DbContext
     {
-        DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("");
+            optionsBuilder.UseNpgsql("DbContext");
         }
     }
 }

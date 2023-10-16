@@ -1,7 +1,8 @@
-﻿using Week_5.Context;
+﻿
+using Week_5.Context;
 using Week_5.Entities;
 
-ShopifyDbContext _context = new ();
+ShopifyDbContext _context = new();
 
 Product product1 = new Product("Zippo Gold Lighter", 0.02m, 2000m);
 _context.Products.Add(product1);
@@ -23,8 +24,8 @@ List<Product> products = new List<Product>()
 _context.Products.AddRange(products);
 _context.SaveChanges();
 
-List<Product> products = _context.Products.ToList();
-foreach (Product product in products)
+List<Product> products2 = _context.Products.ToList();
+foreach (Product product in products2)
 {
     Console.WriteLine(product.Title);
 }
