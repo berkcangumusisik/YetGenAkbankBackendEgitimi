@@ -16,14 +16,14 @@ namespace YetGenAkbankJump.MVCClient.Controllers
         public IActionResult Index()
         {
             var indexViewModel = new PasswordsIndexViewModel();
-            indexViewModel.Passwords = _passwordGenerator.GeneratePassword(10, true, true, true, true);
+            //indexViewModel.Passwords = _passwordGenerator.GeneratePassword(10, true, true, true, true);
             return View(indexViewModel);
         }
 
         [HttpPost]
         public IActionResult Index(PasswordsIndexViewModel indexViewModel)
         {
-            indexViewModel.Passwords = _passwordGenerator.GeneratePassword(indexViewModel.PasswordsLenght, true, true, true, true);
+            //indexViewModel.Passwords = _passwordGenerator.GeneratePassword(indexViewModel.PasswordsLenght, true, true, true, true);
             return View(indexViewModel);
         }
     }
