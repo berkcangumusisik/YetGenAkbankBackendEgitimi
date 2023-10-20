@@ -37,11 +37,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{673C168C-1960-4E44-A313-B23FC985A70B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoMusic.Domain", "RedoMusic\Core\ReDoMusic.Domain\ReDoMusic.Domain.csproj", "{8DD0D4DB-D6D1-4F9A-B147-F2A44F0BF1BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReDoMusic.Domain", "RedoMusic\Core\ReDoMusic.Domain\ReDoMusic.Domain.csproj", "{8DD0D4DB-D6D1-4F9A-B147-F2A44F0BF1BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoMusic.Persistence", "RedoMusic\Infrastructure\ReDoMusic.Persistence\ReDoMusic.Persistence.csproj", "{1A632445-D1F8-42FB-9F16-8DFD75154290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReDoMusic.Persistence", "RedoMusic\Infrastructure\ReDoMusic.Persistence\ReDoMusic.Persistence.csproj", "{1A632445-D1F8-42FB-9F16-8DFD75154290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoMusic.MVC", "RedoMusic\Presentation\ReDoMusic.MVC\ReDoMusic.MVC.csproj", "{F396ED44-6443-4E15-9A05-4B371F69E5A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReDoMusic.MVC", "RedoMusic\Presentation\ReDoMusic.MVC\ReDoMusic.MVC.csproj", "{F396ED44-6443-4E15-9A05-4B371F69E5A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarProject", "CarProject", "{47230330-792B-4638-AE76-9974D85C9B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarProject.Domain", "CarProject\CarProject.Domain\CarProject.Domain.csproj", "{18962BE0-E8BD-4709-8255-716E2423CE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarProject.WebApi", "CarProject\CarProject.WebApi\CarProject.WebApi.csproj", "{CB74E330-F2E6-4ABD-9833-64F1761F4917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarProject.BlazorClient", "CarProject\CarProject.BlazorClient\CarProject.BlazorClient.csproj", "{206CF814-DADD-4C55-8642-B7B6778D0253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +105,18 @@ Global
 		{F396ED44-6443-4E15-9A05-4B371F69E5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F396ED44-6443-4E15-9A05-4B371F69E5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F396ED44-6443-4E15-9A05-4B371F69E5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18962BE0-E8BD-4709-8255-716E2423CE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18962BE0-E8BD-4709-8255-716E2423CE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18962BE0-E8BD-4709-8255-716E2423CE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18962BE0-E8BD-4709-8255-716E2423CE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB74E330-F2E6-4ABD-9833-64F1761F4917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB74E330-F2E6-4ABD-9833-64F1761F4917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB74E330-F2E6-4ABD-9833-64F1761F4917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB74E330-F2E6-4ABD-9833-64F1761F4917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206CF814-DADD-4C55-8642-B7B6778D0253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206CF814-DADD-4C55-8642-B7B6778D0253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206CF814-DADD-4C55-8642-B7B6778D0253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206CF814-DADD-4C55-8642-B7B6778D0253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +134,9 @@ Global
 		{8DD0D4DB-D6D1-4F9A-B147-F2A44F0BF1BD} = {DCAB0398-F27B-4BE1-B5A8-F8CFFBFC15F5}
 		{1A632445-D1F8-42FB-9F16-8DFD75154290} = {3E9ADB9C-1DD3-4108-8ADD-295014019E28}
 		{F396ED44-6443-4E15-9A05-4B371F69E5A5} = {673C168C-1960-4E44-A313-B23FC985A70B}
+		{18962BE0-E8BD-4709-8255-716E2423CE53} = {47230330-792B-4638-AE76-9974D85C9B4C}
+		{CB74E330-F2E6-4ABD-9833-64F1761F4917} = {47230330-792B-4638-AE76-9974D85C9B4C}
+		{206CF814-DADD-4C55-8642-B7B6778D0253} = {47230330-792B-4638-AE76-9974D85C9B4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80AF731A-4015-4D4F-86C4-58DA1109E11D}
